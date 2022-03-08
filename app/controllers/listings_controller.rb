@@ -26,8 +26,8 @@ class ListingsController < ApplicationController
   end
 
   def show
-    user = Listing.find(params[:id])
-    render json: user
+    listing = Listing.find(params[:id])
+    render json: listing
   end
 
   def update
