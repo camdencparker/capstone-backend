@@ -3,4 +3,5 @@ class Conversation < ApplicationRecord
   belongs_to :renter, class_name: "User", 
   belongs_to :listing
   has_many :messages
+  validates :
 end
