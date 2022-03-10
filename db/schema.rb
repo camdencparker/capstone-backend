@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_04_174948) do
+ActiveRecord::Schema[7.0].define(version: 2022_03_10_224822) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -24,7 +24,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_04_174948) do
   create_table "listings", force: :cascade do |t|
     t.integer "user_id"
     t.string "brand"
-    t.string "model_name"
+    t.string "model"
     t.string "year"
     t.text "description"
     t.string "image_url"
@@ -34,7 +34,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_04_174948) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.integer "message_id"
     t.integer "conversation_id"
     t.integer "user_id"
     t.text "body"
