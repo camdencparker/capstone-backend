@@ -20,28 +20,28 @@
 # ])
 
 
-Conversation.create([
-  {leaser_id: 1, renter_id: 2},
-  {leaser_id: 1, renter_id: 3},
-  {leaser_id: 2, renter_id: 1},
-  {leaser_id: 3, renter_id: 1},
-  {leaser_id: 3, renter_id: 2},
-])
-
-
-# Message.create([
-#   {conversation_id: 1, body: "Hi can I come see the bike", user_id: 3},
-#   {conversation_id: 1, body: "Hey thats a way cool bike", user_id: 3},
-#   {conversation_id: 1, body: "You are going to have to hold on for dear life", user_id: 1},
-#   {conversation_id: 1, body: "Can I come see your bikee", user_id: 3},
-#   {conversation_id: 1, body: "When can you meet? I am way interested", user_id: 3},
-#   {conversation_id: 1, body: "Meet me at the walmart in tempe", user_id: 1},
-#   {conversation_id: 2, body: "How do you like the YZFr6?", user_id: 2},
-#   {conversation_id: 2, body: "Best track bike ever", user_id: 3},
-#   {conversation_id: 2, body: "When can I come see the bike", user_id: 2},
-#   {conversation_id: 2, body: "Meet me tomorrow at the mcdonalds", user_id: 3},
-#   {conversation_id: 3, body: "Hey how do you like your honda?", user_id: 1},
-#   {conversation_id: 3, body: "Not the fastest but definitely the smoothest", user_id: 2},
-#   {conversation_id: 3, body: "Sounds like my kind of bike", user_id: 1},
-#   {conversation_id: 3, body: "Defintely sounds the best to meet me tomorrow to check it out", user_id: 2},
+# Conversation.create([
+#   {leaser_id: 1, renter_id: 2},
+#   {leaser_id: 1, renter_id: 3},
+#   {leaser_id: 2, renter_id: 1},
+#   {leaser_id: 3, renter_id: 1},
+#   {leaser_id: 3, renter_id: 2},
 # ])
+
+
+Message.create([
+  {conversation_id: 1, body: "Hi can I come see the bike", user_id: 3},
+  {conversation_id: 1, body: "Hey thats a way cool bike", user_id: 3},
+  {conversation_id: 1, body: "You are going to have to hold on for dear life", user_id: 1},
+  {conversation_id: 1, body: "Can I come see your bikee", user_id: 3},
+  {conversation_id: 1, body: "When can you meet? I am way interested", user_id: 3},
+  {conversation_id: 1, body: "Meet me at the walmart in tempe", user_id: 1},
+  {conversation_id: 2, body: "How do you like the YZFr6?", user_id: 2},
+  {conversation_id: 2, body: "Best track bike ever", user_id: 3},
+  {conversation_id: 2, body: "When can I come see the bike", user_id: 2},
+  {conversation_id: 2, body: "Meet me tomorrow at the mcdonalds", user_id: 3},
+  {conversation_id: 3, body: "Hey how do you like your honda?", user_id: 1},
+  {conversation_id: 3, body: "Not the fastest but definitely the smoothest", user_id: 2},
+  {conversation_id: 3, body: "Sounds like my kind of bike", user_id: 1},
+  {conversation_id: 3, body: "Defintely sounds the best to meet me tomorrow to check it out", user_id: 2},
+])

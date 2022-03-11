@@ -1,8 +1,10 @@
 class ConversationsController < ApplicationController
+  before_action :authorization 
+
   def index
-    conversations = Conversation.all
-    conversations = conversations.order(:listing_id)
-    render: json conversations
+    conversations = current_user.conversations
+    conversations = conversations.order(:updated_at)
+    render json: conversations
   end
 
   def create
