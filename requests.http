@@ -1,10 +1,54 @@
-### Users create (signup)
+### Users create (signup)(WORKING)
 POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "name": "Test",
-  "email": "test@test.com",
+  "name": "Kate",
+  "email": "kate@test.com",
   "password": "password",
   "password_confirmation": "password"
 }
+
+### Sessions create (login)(WORKING)
+POST http://localhost:3000/sessions
+Content-Type: application/json
+
+{
+  "email": "camden@gmail.com",
+  "password": "password"
+}
+
+### listings create(BROKEN 400)
+POST http://localhost:3000/listings
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NDcxMTU3MzN9.6LMhSZqMvDrIEKbm282sTrlUyb9ZEvazK_Yi_S9Zy5U
+Content-Type: application/json
+
+{
+  "brand": "Suzuki",
+  "model": "GSXR-750",
+  "year": "2005",
+  "description": "the most excellent of track machines",
+  "image_url": "https://www.motorcyclespecs.co.za/Gallery%20%20A/SUZUKI%20GSXR750%20%2004%20%203.jpg",
+  "location": "Tempe, Arizona",
+}
+
+### Listings Index(WORKING)
+GET http://localhost:3000/listings
+
+### Listings Show(WORKING)
+GET http://localhost:3000/listings/1
+
+### Listings Update(WORKING)
+PATCH http://localhost:3000/listings/1
+Content-Type: application/json
+
+{
+  "brand": "HONDA"
+}
+
+### Listings Destroy(WORKING)
+DELETE http://localhost:3000/listings/1
+
+### Conversations Index(WORKING NEEDS AUTHORIZATION
+GET http://localhost:3000/conversations
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NDcxMTU3MzN9.6LMhSZqMvDrIEKbm282sTrlUyb9ZEvazK_Yi_S9Zy5U

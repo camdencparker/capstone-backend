@@ -1,18 +1,18 @@
 class ListingsController < ApplicationController
-  before_action :authenticate_user, except: [:index, :show]
+  # before_action :authenticate_user, except: [:index, :show]
   def index
     listings = Listing.all
     if params[:search]
       listings = listings.where("title iLIKE ?", "%#{params[:search]}%")
     end
     listings = listings.order(:id)
-    render: json listings
+    render json: listings
   end
 
   def create
     listing = Listing.new(
       brand: params[:brand],
-      model_name: params[:model_name],
+      model: params[:model],
       year: params[:year],
       description: params[:description],
       image_url: params[:image_url],
@@ -33,7 +33,7 @@ class ListingsController < ApplicationController
   def update
     listing = Listing.find(params[:id])
       listing.brand = params[:brand] || listing.brand
-      listing.model_name = params[:model_name] || listing.model_name
+      listing.model = params[:model] || listing.model
       listing.year = params[:year] || listing.year
       listing.description = params[:description] || listing.description
       listing.image_url = params[:image_url] || listing.image_url
