@@ -15,9 +15,9 @@ Rails.application.routes.draw do
   post "/conversations" => "conversations#create"
   get "/conversations/:id" => "conversations#show"
   delete "/conversations/:id" => "conversations#destroy"
+  # destroy method not in current use for MVP
 
   #Message routes
-  get "/messages" => "messages#index"
   post "/messages" => "messages#create"
 
   #Authentication

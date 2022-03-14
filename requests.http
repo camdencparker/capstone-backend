@@ -1,4 +1,4 @@
-### Users create (signup)(WORKING)
+### Users Create (signup)(WORKING)
 POST http://localhost:3000/users
 Content-Type: application/json
 
@@ -9,7 +9,7 @@ Content-Type: application/json
   "password_confirmation": "password"
 }
 
-### Sessions create (login)(WORKING)
+### Sessions Create (login)(WORKING)
 POST http://localhost:3000/sessions
 Content-Type: application/json
 
@@ -18,10 +18,14 @@ Content-Type: application/json
   "password": "password"
 }
 
-### listings create(BROKEN 400)
+### Users Show(Working)
+GET http://localhost:3000/users/:id
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDczNjIxMDB9.lfzx3a-vg0sWXpn8U-ca6y4ThaI3BjB9mbiomXqGIpY
+
+### listings Create(Working)
 POST http://localhost:3000/listings
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NDcxMTU3MzN9.6LMhSZqMvDrIEKbm282sTrlUyb9ZEvazK_Yi_S9Zy5U
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDczNjIxMDB9.lfzx3a-vg0sWXpn8U-ca6y4ThaI3BjB9mbiomXqGIpY
 
 {
   "brand": "Suzuki",
@@ -29,11 +33,12 @@ Content-Type: application/json
   "year": "2005",
   "description": "the most excellent of track machines",
   "image_url": "https://www.motorcyclespecs.co.za/Gallery%20%20A/SUZUKI%20GSXR750%20%2004%20%203.jpg",
-  "location": "Tempe, Arizona",
+  "location": "Tempe, Arizona"  
 }
 
 ### Listings Index(WORKING)
 GET http://localhost:3000/listings
+
 
 ### Listings Show(WORKING)
 GET http://localhost:3000/listings/1
@@ -49,6 +54,27 @@ Content-Type: application/json
 ### Listings Destroy(WORKING)
 DELETE http://localhost:3000/listings/1
 
-### Conversations Index(WORKING NEEDS AUTHORIZATION
+### Conversations Index(WORKING)
 GET http://localhost:3000/conversations
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NDcxMTU3MzN9.6LMhSZqMvDrIEKbm282sTrlUyb9ZEvazK_Yi_S9Zy5U
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDczNjIxMDB9.lfzx3a-vg0sWXpn8U-ca6y4ThaI3BjB9mbiomXqGIpY
+
+### Conversations Create(Working)
+POST http://localhost:3000/conversations
+Content-Type: application/json
+
+{
+  "leaser_id": 4  
+}
+
+### Conversations Show(Working)
+GET http://localhost:3000/conversations/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDczNjIxMDB9.lfzx3a-vg0sWXpn8U-ca6y4ThaI3BjB9mbiomXqGIpY
+
+### Messages Create(Working)
+POST http://localhost:3000/messages
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDczNjIxMDB9.lfzx3a-vg0sWXpn8U-ca6y4ThaI3BjB9mbiomXqGIpY
+
+{
+  "body": "That is the coolest bike I have ever seen in my life, I NEED TO RIDE IT"
+}

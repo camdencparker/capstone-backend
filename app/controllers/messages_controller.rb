@@ -8,7 +8,8 @@ class MessagesController < ApplicationController
 
   def create
     message = Message.new(
-      body: params[:body],
+      user_id: current_user.id,
+      body: params[:body]
     )
     if message.save
       render json: { message: "message created successfully" }, status: :created

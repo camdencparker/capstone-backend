@@ -1,5 +1,5 @@
 class ListingsController < ApplicationController
-  # before_action :authenticate_user, except: [:index, :show]
+  before_action :authenticate_user, except: [:index, :show, :update]
   def index
     listings = Listing.all
     if params[:search]
@@ -11,6 +11,7 @@ class ListingsController < ApplicationController
 
   def create
     listing = Listing.new(
+      user_id: current_user.id, 
       brand: params[:brand],
       model: params[:model],
       year: params[:year],
