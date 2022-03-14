@@ -14,13 +14,17 @@ POST http://localhost:3000/sessions
 Content-Type: application/json
 
 {
-  "email": "camden@gmail.com",
+  "email": "kate@test.com",
   "password": "password"
 }
 
 ### Users Show(Working)
 GET http://localhost:3000/users/:id
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDczNjIxMDB9.lfzx3a-vg0sWXpn8U-ca6y4ThaI3BjB9mbiomXqGIpY
+
+### Users Destroy(Working)
+DELETE http://localhost:3000/users/:id
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE2NDczNjY2MDh9.kQgDWg-pcaZhOKbkUrsKa8lsInNftx8pOMTLgyflY5w
 
 ### listings Create(Working)
 POST http://localhost:3000/listings

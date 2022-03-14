@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    user = User.find(params[:id])
+    user = User.find(current_user.id)
     user.destroy
     render json: {message: "User profile was successfully erased"}
   end
