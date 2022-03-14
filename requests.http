@@ -1,5 +1,9 @@
+@domain = http://localhost:3000
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDczNjIxMDB9.lfzx3a-vg0sWXpn8U-ca6y4ThaI3BjB9mbiomXqGIpY
+
+
 ### Users Create (signup)(WORKING)
-POST http://localhost:3000/users
+POST {{ domain }}/users
 Content-Type: application/json
 
 {
@@ -10,7 +14,7 @@ Content-Type: application/json
 }
 
 ### Sessions Create (login)(WORKING)
-POST http://localhost:3000/sessions
+POST {{ domain }}/sessions
 Content-Type: application/json
 
 {
@@ -19,17 +23,17 @@ Content-Type: application/json
 }
 
 ### Users Show(Working)
-GET http://localhost:3000/users/:id
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDczNjIxMDB9.lfzx3a-vg0sWXpn8U-ca6y4ThaI3BjB9mbiomXqGIpY
+GET {{ domain }}/users/:id
+Authorization: Bearer {{ jwt }}
 
 ### Users Destroy(Working)
-DELETE http://localhost:3000/users/:id
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE2NDczNjY2MDh9.kQgDWg-pcaZhOKbkUrsKa8lsInNftx8pOMTLgyflY5w
+DELETE {{ domain }}/users/:id
+Authorization: Bearer {{ jwt }}
 
 ### listings Create(Working)
-POST http://localhost:3000/listings
+POST {{ domain }}/listings
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDczNjIxMDB9.lfzx3a-vg0sWXpn8U-ca6y4ThaI3BjB9mbiomXqGIpY
+Authorization: Bearer {{ jwt }}
 
 {
   "brand": "Suzuki",
@@ -41,45 +45,45 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDczNjIxM
 }
 
 ### Listings Index(WORKING)
-GET http://localhost:3000/listings
+GET {{ domain }}/listings
 
 
 ### Listings Show(WORKING)
-GET http://localhost:3000/listings/1
+GET {{ domain }}/listings/1
 
 ### Listings Update(WORKING)
-PATCH http://localhost:3000/listings/1
+PATCH {{ domain }}/listings/1
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDczNjIxMDB9.lfzx3a-vg0sWXpn8U-ca6y4ThaI3BjB9mbiomXqGIpY
+Authorization: Bearer {{ jwt }}
 
 {
   "brand": "KTM"
 }
 
 ### Listings Destroy(WORKING)
-DELETE http://localhost:3000/listings/1
+DELETE {{ domain }}/listings/1
 
 ### Conversations Index(WORKING)
-GET http://localhost:3000/conversations
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDczNjIxMDB9.lfzx3a-vg0sWXpn8U-ca6y4ThaI3BjB9mbiomXqGIpY
+GET {{ domain }}/conversations
+Authorization: Bearer {{ jwt }}
 
 ### Conversations Create(Working)
-POST http://localhost:3000/conversations
+POST {{ domain }}/conversations
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDczNjIxMDB9.lfzx3a-vg0sWXpn8U-ca6y4ThaI3BjB9mbiomXqGIpY
+Authorization: Bearer {{ jwt }}
 
 {
   "leaser_id": 4  
 }
 
 ### Conversations Show(Working)
-GET http://localhost:3000/conversations/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDczNjIxMDB9.lfzx3a-vg0sWXpn8U-ca6y4ThaI3BjB9mbiomXqGIpY
+GET {{ domain }}/conversations/1
+Authorization: Bearer {{ jwt }}
 
 ### Messages Create(Working)
-POST http://localhost:3000/messages
+POST {{ domain }}/messages
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDczNjIxMDB9.lfzx3a-vg0sWXpn8U-ca6y4ThaI3BjB9mbiomXqGIpY
+Authorization: Bearer {{ jwt }}
 
 {
   "body": "That is the coolest bike I have ever seen in my life, I NEED TO RIDE IT"
