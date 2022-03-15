@@ -3,5 +3,4 @@ class UserSerializer < ActiveModel::Serializer
 
   has_many :conversations
   has_many :listings
-  has_many :messages
 end
