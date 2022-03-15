@@ -9,10 +9,11 @@ class MessagesController < ApplicationController
   def create
     message = Message.new(
       user_id: current_user.id,
-      body: params[:body]
+      conversation_id: params[:conversation_id],
+      body: params[:body],
     )
     if message.save
-      render json: { message: "message created successfully" }, status: :created
+      render json: message
     else
       render json: { errors: message.errors.full_messages }, status: :bad_request
     end

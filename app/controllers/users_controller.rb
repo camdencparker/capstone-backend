@@ -37,7 +37,9 @@ class UsersController < ApplicationController
 
   def destroy
     user = User.find(current_user.id)
-    user.destroy
-    render json: {message: "User profile was successfully erased"}
+    if user.destroy
+      Conversation.where("renter_id = ? OR leaser_id = ?", current_user.id, current_user.id)
+      render json: {message: "User profile was successfully erased"}
+    end
   end
 end

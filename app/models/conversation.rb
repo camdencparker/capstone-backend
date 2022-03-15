@@ -1,5 +1,5 @@
 class Conversation < ApplicationRecord
-  has_many :messages
+  has_many :messages, dependent: :destroy 
   belongs_to :leaser, class_name: "User" 
   belongs_to :renter, class_name: "User"
   

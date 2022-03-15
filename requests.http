@@ -1,5 +1,5 @@
 @domain = http://localhost:3000
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDczNjIxMDB9.lfzx3a-vg0sWXpn8U-ca6y4ThaI3BjB9mbiomXqGIpY
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NDc0NTc0Mzl9.-1Mq5gqR0DeCmCeLgfuvg-nAwDUSWt_DmN5jVjS3UYw
 
 
 ### Users Create (signup)(WORKING)
@@ -7,8 +7,8 @@ POST {{ domain }}/users
 Content-Type: application/json
 
 {
-  "name": "Kate",
-  "email": "kate@test.com",
+  "name": "Popeye",
+  "email": "popeye@test.com",
   "password": "password",
   "password_confirmation": "password"
 }
@@ -18,7 +18,7 @@ POST {{ domain }}/sessions
 Content-Type: application/json
 
 {
-  "email": "kate@test.com",
+  "email": "toria@gmail.com",
   "password": "password"
 }
 
@@ -73,7 +73,7 @@ Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
-  "leaser_id": 4  
+  "leaser_id": 7  
 }
 
 ### Conversations Show(Working)
@@ -86,5 +86,6 @@ Content-Type: application/json
 Authorization: Bearer {{ jwt }}
 
 {
-  "body": "That is the coolest bike I have ever seen in my life, I NEED TO RIDE IT"
+  "conversation_id": 1,
+  "body": "testing messagge"
 }

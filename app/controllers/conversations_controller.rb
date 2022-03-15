@@ -10,7 +10,7 @@ class ConversationsController < ApplicationController
   def create
     conversation = Conversation.new(
       leaser_id: params[:leaser_id],
-      renter_id: current_user.id
+      renter_id: current_user.id,
     )
     if conversation.save
       render json: { message: "conversation created successfully" }, status: :created
