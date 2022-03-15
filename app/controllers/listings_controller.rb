@@ -20,7 +20,7 @@ class ListingsController < ApplicationController
       location: params[:location]
     )
     if listing.save
-      render json: { message: "listing created successfully" }, status: :created
+      render json: listing
     else
       render json: { errors: listing.errors.full_messages }, status: :bad_request
     end
