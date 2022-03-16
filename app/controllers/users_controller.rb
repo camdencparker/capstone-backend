@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       password_confirmation: params[:password_confirmation]
     )
     if user.save
-      render json: { message: "User created successfully" }, status: :created
+      render json: user
     else
       render json: { errors: user.errors.full_messages }, status: :bad_request
     end
@@ -37,9 +37,6 @@ class UsersController < ApplicationController
 
   def destroy
     user = User.find(current_user.id)
-    if user.destroy
-      Conversation.where("renter_id = ? OR leaser_id = ?", current_user.id, current_user.id)
       render json: {message: "User profile was successfully erased"}
-    end
   end
 end

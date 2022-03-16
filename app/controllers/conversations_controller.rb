@@ -13,7 +13,7 @@ class ConversationsController < ApplicationController
       renter_id: current_user.id,
     )
     if conversation.save
-      render json: { message: "conversation created successfully" }, status: :created
+      render json: conversation
     else
       render json: { errors: conversation.errors.full_messages }, status: :bad_request
     end
