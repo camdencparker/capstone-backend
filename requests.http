@@ -1,5 +1,5 @@
 @domain = http://localhost:3000
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2NDc1NDM2MjB9.X6FL3eb3xL7YFMacYDFTk_a0az564Hx6K8EYQjZGgFg
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NDgwMDQ4MTd9.KM1E0iMTbtyFuqpDx_3HnhfTvNNSLxj30hAlxfbSxSw
 
 
 ### Users Create (signup)(WORKING)
@@ -7,8 +7,8 @@ POST {{ domain }}/users
 Content-Type: application/json
 
 {
-  "name": "Popeye",
-  "email": "popeye@test.com",
+  "name": "Jason",
+  "email": "jason@gmail.com",
   "password": "password",
   "password_confirmation": "password"
 }
@@ -18,12 +18,12 @@ POST {{ domain }}/sessions
 Content-Type: application/json
 
 {
-  "email":"camden@gmail.com",
+  "email":"melanie@gmail.com",
   "password": "password"
 }
 
 ### Users Show(Working)
-GET {{ domain }}/users/:id
+GET {{ domain }}/users/1
 Authorization: Bearer {{ jwt }}
 
 ### Users Destroy(Working)
@@ -77,7 +77,7 @@ Authorization: Bearer {{ jwt }}
 }
 
 ### Conversations Show(Working)
-GET {{ domain }}/conversations/1
+GET {{ domain }}/conversations/:id
 Authorization: Bearer {{ jwt }}
 
 ### Messages Create(Working)

@@ -4,7 +4,7 @@ class ConversationsController < ApplicationController
   def index
     conversations = current_user.conversations
     conversations = conversations.order(:updated_at)
-    render json: conversations
+    render json: conversations, include: ["partner"]
   end
 
   def create
@@ -20,7 +20,7 @@ class ConversationsController < ApplicationController
   end
 
   def show
-    conversation = Conversation.find(params[:id])
+    conversation = current_user.conversations.find_by(id: params[:id])
     render json: conversation
   end
 

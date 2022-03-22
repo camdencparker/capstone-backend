@@ -11,6 +11,5 @@ class User < ApplicationRecord
   
   def conversations
     Conversation.where("renter_id = ? OR leaser_id = ?", id, id)
-    
   end
 end

@@ -3,6 +3,7 @@ class MessagesController < ApplicationController
 
   def index
     messages = Message.all
+    messages = messages.order(:updated_at)
     render json: messages
   end
 
