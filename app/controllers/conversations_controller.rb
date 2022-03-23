@@ -21,7 +21,7 @@ class ConversationsController < ApplicationController
 
   def show
     conversation = current_user.conversations.find_by(id: params[:id])
-    render json: conversation
+    render json: conversation, include: ["partner", "messages.user"]
   end
 
   def destroy

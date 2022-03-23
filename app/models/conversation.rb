@@ -4,6 +4,6 @@ class Conversation < ApplicationRecord
   belongs_to :renter, class_name: "User"
   
   
-  #validations so user cant start conversation with themself
+  #prevents multiple conversations between two users
   validates :renter_id, uniqueness: {scope: :leaser_id}
 end
